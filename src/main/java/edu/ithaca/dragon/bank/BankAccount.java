@@ -35,6 +35,12 @@ public class BankAccount {
     }
 
 
+    /**
+     *
+     * @param email needs to have at least an @ symbol between the initial name and the .com
+     *        example name@gmail.com
+     *@return true or false
+     */
     public static boolean isEmailValid(String email){
         if (email.indexOf('@') == -1){
             return false;
