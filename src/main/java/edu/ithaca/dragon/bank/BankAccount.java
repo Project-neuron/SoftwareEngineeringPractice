@@ -61,6 +61,17 @@ public class BankAccount {
      */
 
     public  static boolean isAmountValid(double amount){
-        return false;
+        String text = Double.toString(Math.abs(amount));
+        int integerPlaces = text.indexOf('.');
+        int decimalPlaces = text.length() - integerPlaces - 1;
+        boolean ans;
+        if(amount > 0 && decimalPlaces <= 2){
+             ans =true;
+        }
+        else{
+            ans = false;
+
+        }
+        return ans;
     }
 }
