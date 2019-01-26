@@ -38,7 +38,7 @@ public class BankAccount {
     /**
      *
      * @param email needs to have at least an @ symbol between the initial name and the .com
-     *        example name@gmail.com
+     *        example name@gmail.com and a .
      *@return true or false
      */
     public static boolean isEmailValid(String email){
