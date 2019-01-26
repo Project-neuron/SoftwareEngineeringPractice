@@ -28,17 +28,18 @@ public class BankAccount {
 
     /**
      * @post reduces the balance by amount if amount is non-negative and smaller than balance
+     * if balance is zero and withdrawal is made the balance should remain 0 and not go negative.
+     *
      */
     public void withdraw (double amount)  {
-        balance -= amount;
+        this.balance -= amount;
 
     }
 
 
     /**
      *
-     * @param email needs to have at least an @ symbol between the initial name and the .com
-     *        example name@gmail.com and a .
+     * @param email needs to have at least an @ symbol and a . inside of it at some points
      *@return true or false
      */
     public static boolean isEmailValid(String email){
