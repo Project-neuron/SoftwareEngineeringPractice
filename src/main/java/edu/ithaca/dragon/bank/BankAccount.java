@@ -49,16 +49,30 @@ public class BankAccount {
 
     /**
      *
-     * @param email needs to have at least an @ symbol and a . inside of it at some points
+     *@param email needs to have at least an @ symbol and a . inside of it at some point
+     *             cannot have duplicate . or @ symbols or a . and an @ right together
+     *             the ending dot needs to have at least 2 charachters near it
+     *             there needs to be at least one charachter before the @ symbol
      *@return true or false
      */
     public static boolean isEmailValid(String email){
         if (email.indexOf('@') == -1 || email.indexOf('.') == -1){
             return false;
         }
-        else {
-            return true;
+        else if(email.contains("..") || email.contains("@@") || email.contains("@.")){
+            return false;
         }
+        else if(email.substring(0,email.indexOf(".")).length() < 1){
+            return false;
+        }
+        else if(email.substring(email.lastIndexOf(".")).length() < 3){
+            return false;
+        }
+        else if(email.substring(0,email.indexOf("@")).length() < 1) {
+            return false;
+        }
+        return true;
+
     }
 
     /**
